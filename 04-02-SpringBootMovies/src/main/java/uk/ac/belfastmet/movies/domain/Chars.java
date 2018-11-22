@@ -1,16 +1,16 @@
 package uk.ac.belfastmet.movies.domain;
 
-public class Character {
+public class Chars {
 	
 	private String name;
 	private String movie;
 	private String image;
 	
-	public Character() {
+	public Chars() {
 		super();
 	}
 
-	public Character(String name, String movie, String image) {
+	public Chars(String name, String movie, String image) {
 		super();
 		this.name = name;
 		this.movie = movie;
