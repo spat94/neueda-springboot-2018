@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+<head th:replace= "/layouts/head :: headFrag">
+
+</head>
+
+<body>
+
+<nav th:replace="/layouts/nav :: navFrag"></nav>
+
+<div class="jumbotron" th:replace="/layouts/jumbotron :: jFrag"></div>
+
+<div class="container">
+	<table class="table table-striped">
+		<tr>
+			<th>Name</th>
+			<th>Country</th>
+			<th>Place</th>
+			<th>Footprint Area (square meters)</th>
+			<th>Volume (meters cubed)</th>
+			<th>Description</th>
+			<th>Image</th>
+			<th>Maps</th>
+		</tr>
+		
+		<tr th:each="build : ${byvol}">
+			<td th:text="${build.name}">Boeing Everett Factory</td>
+			<td th:text="${build.country}">United States</td>
+			<td th:text="${build.place}">Everett, Washington</td>
+			<td th:text="${build.footprint}">398000</td>
+			<td th:text="${build.volume}">13.3 million</td>
+			<td th:text="${build.description}">Boeing's assembly site for a selection of the company's largest aircraft, originally built for construction of the 747</td>
+			<td><img src="../static/img/bef.png" th:src="@{/img/}+${build.png}"></img></td>
+		</tr>
+	
+	</table>
+
+</div>
+</body>
+
+</html>
