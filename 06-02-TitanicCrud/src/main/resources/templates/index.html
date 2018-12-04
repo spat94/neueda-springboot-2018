@@ -10,36 +10,21 @@
 		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"></link>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc+VRZkx5xU3daN+lYb49+Ax+Tl" crossorigin="anonymous"></script>
-	<title th:text="${pageTitle}">Dwarfs</title>
+	<title th:text="${pageTitle}"></title>
 </head>
 
 <body>
+
 <div class="container">
 
-<div class="jumbotron text-center">
-<h1 th:text="${subTitle}">Disney Dwarfs</h1>
-</div>
+<nav th:replace="fragments/nav :: navFragment"> </nav>
 
-<nav th:replace="layouts/nav :: navFragment"> </nav>
 
-<table class="table table-striped">
-	<thead>
-		<th>name</th>
-		<th>Author</th>
-		<th>Image</th>
-	</thead>
-	<tbody>
-		<tr th:each="dwarf: ${dwarfs}">
-			<td th:text="${dwarf.name}">Happy</td>
-			<td th:text="${dwarf.author}">Disney</td>
-			<td><img src="../static/img/happy.png" th:src="@{/img/}+${dwarf.image}"></img></td>
-		</tr>
-	</tbody>
-</table>
 
 </div>
+
+
 
 </body>
-
 
 </html>
