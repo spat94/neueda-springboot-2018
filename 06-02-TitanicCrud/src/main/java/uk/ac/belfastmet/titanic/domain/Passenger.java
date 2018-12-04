@@ -10,7 +10,7 @@ public class Passenger {
 	@Id
 	@GeneratedValue
 	private Integer passengerId;
-	private boolean survived;
+	private Integer survived;
 	private Integer pclass;
 	private String name;
 	private String sex;
@@ -27,7 +27,7 @@ public class Passenger {
 		super();
 	}
 
-	public Passenger(Integer passengerId, boolean survived, Integer pclass, String name, String sex, Integer age,
+	public Passenger(Integer passengerId, Integer survived, Integer pclass, String name, String sex, Integer age,
 			Integer sibSb, Integer parch, String ticket, double fare, String cabin, char embarked) 
 	{
 		super();
@@ -53,11 +53,11 @@ public class Passenger {
 		this.passengerId = passengerId;
 	}
 
-	public boolean isSurvived() {
+	public Integer isSurvived() {
 		return survived;
 	}
 
-	public void setSurvived(boolean survived) {
+	public void setSurvived(Integer survived) {
 		this.survived = survived;
 	}
 
