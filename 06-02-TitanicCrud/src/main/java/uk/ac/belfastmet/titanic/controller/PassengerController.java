@@ -19,12 +19,11 @@ public class PassengerController {
 				this.passengerRepository = passengerRepository;
 			}
 
-	@GetMapping("")	
+	@GetMapping("/all")	
 	public String passenger(Model model)
 	
 	{
 		model.addAttribute("pageTitle", "Passengers");
-		model.addAttribute("passengers", this.passengerRepository.findAll());
 		return "passengersPage.html";	
 	}
 }

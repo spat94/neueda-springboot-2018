@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import uk.ac.belfastmet.titanic.repository.PassengerRepository;
 
 @Controller
-@RequestMapping
+@RequestMapping("/")
 public class SearchController {
 	
 	PassengerRepository passengerRepository;
@@ -28,13 +28,6 @@ public class SearchController {
 			return "passengersPage.html";
 		}
 	
-		@GetMapping("/searchid")
-		public String searchId(@RequestParam("id") Integer passengerId, Model model) 
-		{
-			model.addAttribute("pageTitle", "Search");
-			model.addAttribute("passengers", this.passengerRepository.findById(passengerId));
-			return "passengerPage.html";
-		}
 
 }
 
