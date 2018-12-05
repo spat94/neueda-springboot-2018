@@ -25,10 +25,6 @@ public class DisneyController {
 	@GetMapping("")
 	public String disney(Model model) 
 	{
-		//DwarfService dwarfService = new DwarfService();
-		//ArrayList<Dwarf> disneyDwarfs = dwarfService.getDisneyDwarfs();
-		//model.addAttribute("disneyDwarfs", disneyDwarfs);
-		
 		model.addAttribute("pageTitle", "Disney");
 		model.addAttribute("subTitle", "Disney Dwarfs");
 		model.addAttribute("dwarfs", this.dwarfRepository.findByAuthor("Disney"));

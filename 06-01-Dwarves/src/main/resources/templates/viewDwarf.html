@@ -24,29 +24,40 @@
 
 <table class="table table-striped">
 	<thead>
-		<th>Dwarf ID</th>
-		<th>name</th>
-		<th>Author</th>
-		<th>Image</th>
-		<th>CRUD</th>
+		<th>Column</th>
+		<th>Value</th>
 	</thead>
 	<tbody>
-		<tr th:each="dwarf: ${dwarfs}">
-			<td th:text="${dwarf.dwarfId}">14</td>
+		<tr>
+			<td>Dwarf ID</td>
+			<td th:text="${dwarf.dwarfId}"></td>
+		</tr>
+		<tr>
+			<td>Name</td>
+			<td th:text="${dwarf.name}"></td>
+		</tr>
+		<tr>
+			<td>Author</td>
+			<td th:text="${dwarf.author}"></td>
+		</tr>
+		<tr>
+			<td>Image</td>
+			<td th:text="${dwarf.image}"></td>
+		</tr>
+	</tbody>
+</table>
+
+</div>
+<!--  <tr th:each="dwarf: ${dwarfs}">
 			<td th:text="${dwarf.name}">Happy</td>
 			<td th:text="${dwarf.author}">Disney</td>
 			<td><img src="../static/img/happy.png" th:src="@{/img/}+${dwarf.image}"></img></td>
 			<td><a href="#" th:href="@{/view/} + ${dwarf.dwarfId}">View</a><br>
 				<a href="#" th:href="@{/edit/} + ${dwarf.dwarfId}">Edit</a><br>
 				<a href="#" th:href="@{/delete/} + ${dwarf.dwarfId}">Delete</a>
-			</td> 
+			</td>
 			
-		</tr>
-	</tbody>
-</table>
-
-</div>
-
+		</tr> -->
 </body>
 
 
