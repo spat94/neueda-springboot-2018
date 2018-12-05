@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import uk.ac.belfastmet.titanic.repository.PassengerRepository;
 
 @Controller
-@RequestMapping("passenger")
+@RequestMapping("/all")
 public class PassengerController {
 	
 	PassengerRepository passengerRepository;
@@ -19,11 +19,12 @@ public class PassengerController {
 				this.passengerRepository = passengerRepository;
 			}
 
-	@GetMapping("/all")	
-	public String passenger(Model model)
+	@GetMapping("")	
+	public String all(Model model)
 	
 	{
 		model.addAttribute("pageTitle", "Passengers");
+		model.addAttribute("passengers", this.passengerRepository.findAll());
 		return "passengersPage.html";	
 	}
 }
