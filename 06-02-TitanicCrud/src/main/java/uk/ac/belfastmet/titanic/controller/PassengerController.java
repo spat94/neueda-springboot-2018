@@ -27,4 +27,6 @@ public class PassengerController {
 		model.addAttribute("passengers", this.passengerRepository.findAll());
 		return "passengersPage.html";	
 	}
+	
+	
 }
