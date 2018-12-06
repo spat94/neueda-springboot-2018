@@ -53,7 +53,7 @@ public class DwarfController {
 		else
 		{
 			Dwarf savedDwarf = this.dwarfRepository.save(dwarf);
-			return "redirect:/view/"+dwarf.getDwarfId();
+			return "redirect:/view/"+savedDwarf.getDwarfId();
 		}
 	}
 	

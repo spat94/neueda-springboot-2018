@@ -21,11 +21,11 @@ import uk.ac.belfastmet.titanic.repository.PassengerRepository;
 			this.passengerRepository = passengerRepository;
 		}
 
-		@GetMapping("/searchid")
-		public String searchid(@RequestParam("id") Integer passengerID, Model model)
+		@GetMapping("/searchName")
+		public String searchName(@RequestParam("name") String name, Model model)
 		{
 			model.addAttribute("pageTitle", "Search");
-			model.addAttribute("passengers", this.passengerRepository.findByPassengerId(passengerID));
+			model.addAttribute("passengers", this.passengerRepository.findByNameContaining(name));
 			return "passengersPage.html";
 		}
 

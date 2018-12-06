@@ -19,14 +19,19 @@
 
 <nav th:replace="fragments/nav :: navFragment"> </nav>
 
-<form action="/searchid" method="get">
+<form action="/searchName" method="get">
 	<div class="form-group">
-		<label>By ID</label>
-		<input type="text" name="id" class="form-control" placeholder="Enter a passenger ID to search">
+		<input type="text" name="name" class="form-control" placeholder="Enter a passenger name to search">
 	</div>
 	<button type="submit" class="btn btn-primary">Submit</button>
 
 </form>
+
+<div class="alert alert-success" role="alert" th:if="${message}">
+	<p th:text="${message}"></p>
+</div>
+
+<p> <a href="#" th:href="@{/add/}">Add</a>
 
 <table class ="table table-striped">
 	<thead>
