@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+
+
+<head>
+	<meta charset="UTF-8"></meta>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+	<meta http-equiv="x-ua-compatible" content="ie=edge"></meta>
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"></link>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js" integrity="sha384-pjaaA8dDz/5BgdFUPX6M/9SUZv4d12SUPF0axWc+VRZkx5xU3daN+lYb49+Ax+Tl" crossorigin="anonymous"></script>
+	<title th:text="${pageTitle}"></title>
+</head>
+
+<body>
+
+<div class="container">
+
+<nav th:replace="fragments/nav :: navFragment"> </nav>
+
+<form class="form-horizontal" th:action="@{/save}" method="post">
+<table class ="table table-striped">
+	<thead>
+		<th>Column</th>
+		<th>Value</th>
+	</thead>
+	
+	<tbody>
+		<tr>
+			<td>Passenger ID</td>
+			<td><input type="text" readonly="readonly" th:field="${passenger.passengerId}"></td>
+		</tr>
+		<tr>
+			<td>Survived?</td>
+			<td><input type="text" class="form-control" th:field="${passenger.survived}"></td>
+		</tr>
+		<tr>
+			<td>Class</td>
+			<td><input type="text" class="form-control" th:field="${passenger.pclass}"></td>
+		</tr>
+		<tr>
+			<td>Name</td>
+			<td><input type="text" class="form-control" th:field="${passenger.name}"></td>
+		</tr>
+		<tr>
+			<td>Sex</td>
+			<td><input type="text" class="form-control" th:field="${passenger.sex}"></td>
+		</tr>
+		<tr>
+			<td>Age</td>
+			<td><input type="text" class="form-control" th:field="${passenger.age}"></td>
+		</tr>
+		<tr>
+			<td>Siblings or Spouse?</td>
+			<td><input type="text" class="form-control" th:field="${passenger.sibSb}"></td>
+		</tr>
+		<tr>
+			<td>Parents or Children?</td>
+			<td><input type="text" class="form-control" th:field="${passenger.parch}"></td>
+		</tr>
+		<tr>
+			<td>Ticket</td>
+			<td><input type="text" class="form-control" th:field="${passenger.ticket}"></td>
+		</tr>
+		<tr>
+			<td>Fare</td>
+			<td><input type="text" class="form-control" th:field="${passenger.fare}"></td>
+		</tr>
+		<tr>
+			<td>Cabin</td>
+			<td><input type="text" class="form-control" th:field="${passenger.cabin}"></td>
+		</tr>
+		<tr>
+			<td>Embarked</td>
+			<td><input type="text" class="form-control" th:field="${passenger.embarked}"></td>
+		</tr>
+	</tbody>
+
+</table>
+		<button type="submit" class="btn btn-primary">Submit Changes</button>
+</form>
+
+</div>
+
+</body>
+
+</html>
