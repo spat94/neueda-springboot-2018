@@ -15,6 +15,7 @@ public class Passenger {
 	private String cabin;
 	private String embarked;
 	
+	//Constructors
 	public Passenger() 
 	{
 		super();
@@ -39,7 +40,7 @@ public class Passenger {
 	}
 
 
-
+	//Getters & Setters
 	public Integer getPassengerId() {
 		return passengerId;
 	}

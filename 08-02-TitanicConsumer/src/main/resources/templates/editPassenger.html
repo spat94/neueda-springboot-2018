@@ -19,7 +19,7 @@
 
 <nav th:replace="fragments/nav :: navFragment"> </nav>
 
-<form class="form-horizontal" th:action="@{/save}" method="post">
+<form class="form-horizontal" th:action="@{/titanic/save}" method="post">
 <table class ="table table-striped">
 	<thead>
 		<th>Column</th>
@@ -75,9 +75,11 @@
 			<td>Embarked</td>
 			<td><input type="text" class="form-control" th:field="${passenger.embarked}"></td>
 		</tr>
+		
 	</tbody>
 
 </table>
+	<input type="hidden" class="form-control" id="addUpdate" name="addUpdate" th:value="${pageTitle}" />
 		<button type="submit" class="btn btn-primary">Submit Changes</button>
 </form>
 
